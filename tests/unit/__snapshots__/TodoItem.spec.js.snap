@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoItem snapshot test first render 1`] = `<li class="todo-item todo-finished"><input type="checkbox"> <span class="content">test TodoItem</span> <button class="del-btn" style="display: none;">delete</button></li>`;
+
+exports[`TodoItem snapshot test mouseover 1`] = `<li class="todo-item"><input type="checkbox"> <span class="content">test TodoItem</span> <button class="del-btn">delete</button></li>`;
+
+exports[`TodoItem snapshot test toggle checked 1`] = `<li class="todo-item"><input type="checkbox"> <span class="content">test TodoItem</span> <button class="del-btn" style="display:none;">delete</button></li>`;

@@ -1,28 +1,49 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <input type="text" v-model="newContent">
+    <button @click="handleAddTodo">add</button>
+    <todo ref="todo"></todo>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Todo from "./components/Todo.vue";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    HelloWorld
+    Todo
+  },
+  data() {
+    return {
+      newContent: ""
+    };
+  },
+  methods: {
+    handleAddTodo() {
+      let content = this.newContent;
+      if (!content) return;
+      const { todo } = this.$refs;
+      todo.addTodo({ content, finished: false });
+      this.newContent = "";
+    }
   }
-}
+};
 </script>
 
 <style lang="scss">
+* {
+  margin: 0;
+  padding: 0;
+}
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  // margin-top: 60px;
+  width: 800px;
+  margin: 60px auto 0;
 }
 </style>

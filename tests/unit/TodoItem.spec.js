@@ -82,7 +82,7 @@ describe('TodoItem snapshot test', () => {
             propsData: {
                 item: {
                     finished: true,
-                    content: 'test TodoItem content change'
+                    content: 'test TodoItem'
                 }
             }
         })
@@ -101,6 +101,7 @@ describe('TodoItem snapshot test', () => {
         })
         const checkbox = wrapper.find('input');
         checkbox.trigger('click');
+        // expect(wrapper.html()).toMatchSnapshot()
         renderer.renderToString(wrapper.vm, (err, str) => {
             expect(str).toMatchSnapshot()
         })
@@ -118,6 +119,7 @@ describe('TodoItem snapshot test', () => {
             }
         })
         wrapper.trigger('mouseover');
+        // expect(wrapper.html()).toMatchSnapshot()
         renderer.renderToString(wrapper.vm, (err, str) => {
             expect(str).toMatchSnapshot()
         })
